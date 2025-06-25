@@ -1,5 +1,5 @@
-// import Image from "next/image";
 import Link from "next/link";
+import SliderCarusel from "@/components/slider";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
     <li><Link href="/about">На сторінку про нас</Link></li>
     <li><Link href="/dashboard">На сторінку dashboard</Link></li>
    </ul>
+   <SliderCarusel />
    </>
   );
 }
