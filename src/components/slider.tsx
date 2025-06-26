@@ -5,6 +5,8 @@ import Slider from 'react-slick';
 import { Settings } from 'react-slick'; 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Image from 'next/image';
+import ImagePhoto from "./../app/image/ukraine.png"
 
 
 import Link from "next/link";
@@ -27,16 +29,20 @@ export default function SliderCarusel() {
     <div className="image-slider-container">
       <Slider {...settings}>
         <div>
-          <img src="https://inpl.eu/img/20211205_2667.jpg" />
+          <Image src={ImagePhoto} alt='ajnj' priority sizes='(max-width: 768px) 100vw, (max-width: 1220px) 50vw' />
+          {/* <img src="https://inpl.eu/img/20211205_2667.jpg" /> */}
         </div>
         <div>
-          <img src="https://inpl.eu/img/20211205_2667.jpg" />
+           <Image src={ImagePhoto} alt='ajnj'  priority />
+          {/* <img src="https://inpl.eu/img/20211205_2667.jpg" /> */}
         </div>
         <div>
-          <img src="https://inpl.eu/img/20211205_2667.jpg" />
+           <Image src={ImagePhoto} alt='ajnj'  priority />
+          {/* <img src="https://inpl.eu/img/20211205_2667.jpg" /> */}
         </div>
-        <div>
-          <img src="https://inpl.eu/img/20211205_2667.jpg" />
+        <div> 
+      <Image src={ImagePhoto} alt='ajnj' priority />
+          {/* <img src="https://inpl.eu/img/20211205_2667.jpg" /> */}
         </div>
       </Slider>
     </div>

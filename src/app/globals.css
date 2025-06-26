@@ -32,7 +32,31 @@ body {
   width: 400px;
 }
 
-.image-slider-container .slick-prev:before,
+/* .image-slider-container .slick-prev:before,
 .image-slider-container .slick-next:before {
   color: black;
+} */
+
+
+/* Змініть колір лівої стрілки */
+.image-slider-container .slick-prev:before {
+  color: #ff0000; /* Червоний колір для лівої стрілки */
+  /* Можливо, знадобиться !important, якщо є конфлікт стилів */
+  /* color: #ff0000 !important; */
+}
+
+/* Змініть колір правої стрілки */
+.image-slider-container .slick-next:before {
+  color: #0000ff; /* Синій колір для правої стрілки */
+  /* color: #0000ff !important; */
+}
+
+.image-slider-container .slick-next {
+  right: 0;
+}
+
+.image-slider-container .slick-prev {
+  position: absolute;
+  left: 0;
+  z-index: 999;
 }
