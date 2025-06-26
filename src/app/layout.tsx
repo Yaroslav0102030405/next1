@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
+// import { ruRU } from "@clerk/localizations";
+import { ukUA } from "@clerk/localizations";
 import { Oswald,  Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Navigation from "@/components/navigation";
 
 const geistOswald = Oswald({
   variable: "--font-oswald",
@@ -31,14 +35,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider localization={ukUA}>
     <html lang="en">
       <body
         className={`${geistOswald.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
+        <Navigation/>
         {children}
         <Footer />
       </body>
     </html>
+    </ClerkProvider>
   );
 }

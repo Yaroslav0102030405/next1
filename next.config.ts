@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['inpl.eu'], // <--- Переконайтеся, що 'inpl.eu' тут є
   },
-  formats: ["image/avif", "image/webp"],
+  // formats: ["image/webp"],
 };
 
 export default nextConfig;
