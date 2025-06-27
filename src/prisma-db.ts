@@ -7,16 +7,16 @@ const seedProducts = async () => {
   if (count === 0) {
     await prisma.product.createMany({
       data: [
-        { image: "і1", title: "Продукт 1",  description: "Описание 1" },
-        { image: "і1",title: "Продукт 2", description: "Описание 2" },
-        { image: "і1",title: "Продукт 3",  description: "Описание 3" },
+        { image: "f1", title: "Продукт 1",  description: "Описание 1" },
+        { image: "a2",title: "Продукт 2", description: "Описание 2" },
+        { image: "c3",title: "Продукт 3",  description: "Описание 3" },
       ],
     });
   }
 };
 seedProducts();
 
-// CRUD-операции
+// CRUD-операції
 export async function getProducts() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return prisma.product.findMany();

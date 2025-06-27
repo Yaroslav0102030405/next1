@@ -1,13 +1,17 @@
 "use client"
 
 // import { Submit } from "@/components/submitBtn";
-import { FormState, createProduct } from "../actions/products";
+import { FormState, editProduct } from "@/app/actions/products";
+// import { getProduct } from "@/prisma-db";
 import { useActionState } from "react";
+import { Product } from "./../../products-db/page";
 
+export default function EditProductForm({product}: {product: Product}) {
+//   const {id } = await params
 
-
-export default function AddProductPage() {
-  const initialState: FormState = {
+//   const product = await getProduct(parseInt(id))
+  
+    const initialState: FormState = {
 errors: {},
 values: {
     image: "",
@@ -15,7 +19,8 @@ values: {
   description: "",
    }
   }
-  const [state, formAction, isPeding] = useActionState(createProduct, initialState)
+  const [state, formAction, isPeding] = useActionState((prevState: FormState, formData: FormData) => {
+    return editProduct(product.id, prevState, formData)}, initialState)
 
   
 
@@ -28,7 +33,7 @@ values: {
           type="text"
           className="block w-full p-2 text-black border rounded bg-white"
           name="image"
-          defaultValue={state.values?.image || ""}
+          defaultValue={product.image}
         />
       </label>
       {state.errors.image && <p className="text-red-500">{state.errors.image}</p>}
@@ -40,7 +45,7 @@ values: {
           type="textr"
           className="block w-full p-2 text-black border rounded bg-white"
           name="title"
-          defaultValue={state.values?.title || ""}
+          defaultValue={product.title}
         />
       </label>
        {state.errors.title && <p className="text-red-500">{state.errors.title}</p>}
@@ -51,7 +56,7 @@ values: {
         <textarea
           className="block w-full p-2 text-black border rounded bg-white"
           name="description"
-          defaultValue={state.values?.description || ""}
+          defaultValue={product.description && ""}
         />
       </label>
          {state.errors.description && <p className="text-red-500">{state.errors.description}</p>}
